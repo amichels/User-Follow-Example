@@ -1,0 +1,15 @@
+table{
+	width:100%;
+}
+
+.container{
+	margin:0 auto;
+	padding:1em;
+	max-width:1080px;
+	width:100%;
+}
+
+.form-center{
+    width: 400px;
+    margin: 0 auto;
+}
