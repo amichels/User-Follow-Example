@@ -1,7 +1,7 @@
 <?php
 
 //Lesson routes
-Route::resource('persons', 'PersonsController');
+Route::resource('people', 'PeopleController');
 
 Route::get('/', function()
 {

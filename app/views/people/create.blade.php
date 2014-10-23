@@ -1,4 +1,4 @@
-{{ Form::open(array('url'=>'persons')) }}
+{{ Form::open(array('url'=>'people')) }}
     <h1>Create Person</h1>
 
     <!-- if there are creation errors, they will show here -->
@@ -11,6 +11,7 @@
     {{ Form::text('Address', null, array('placeholder'=>'Address')) }}
     {{ Form::text('State', null, array('placeholder'=>'State')) }}
     {{ Form::text('City', null, array('placeholder'=>'City')) }}
+    {{ Form::text('Country', null, array('placeholder'=>'Country')) }}
     {{ Form::text('ZipCode', null, array('placeholder'=>'Zip')) }}
  
     {{ Form::submit('Create', array('class'=>'button'))}}

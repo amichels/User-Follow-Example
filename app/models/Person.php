@@ -3,17 +3,18 @@
 class Person extends \Eloquent {
 
 	public static $rules = [
-		'EmailAddress'=>'required|email|unique:persons',
+		'EmailAddress'=>'required|email',
 		'FirstName'=>'required|alpha|min:2',
 	    'LastName'=>'required|alpha|min:2',
 	    'PhoneNumber'=>'required|numeric|min:10',
-	    'Address'=>'required|alpha_num|min:2',
+	    'Address'=>'required|min:2',
 	    'State'=>'required|alpha|min:2',
 	    'City'=>'required|alpha|min:2',
-	    'ZipCode'=>'required|numeric|min:5'
+	    'ZipCode'=>'required|numeric|min:5',
+	    'Country'=>'required|alpha_num|min:2'
 	    
 	];
 
-	protected $fillable = ['title','description'];
+	protected $fillable = ['EmailAddress','FirstName','LastName','PhoneNumber','Address','State','City','ZipCode'];
 
 }

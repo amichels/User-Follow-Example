@@ -22,7 +22,7 @@
 
       <section class="top-bar-section">
         <ul class="right">
-            <li>{{ HTML::link('persons/', 'People') }}</li>
+            <li>{{ HTML::link('people/', 'People') }}</li>
         </ul>
       </section>
     </nav>   
