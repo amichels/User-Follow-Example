@@ -15,8 +15,14 @@
                 <td>{{ $value->LastName }}</td>
                 <td>
                     <a class="button tiny" href="{{ URL::route('people.show', $value->id) }}">View</a>
+                    {{ Form::open(array('url' => 'people/' . $value->id)) }}
+                        {{ Form::hidden('_method', 'DELETE') }}
+                        {{ Form::submit('Delete', array('class' => 'button tiny alert')) }}
+                    {{ Form::close() }}
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+
+<a class="button" href="{{ URL::route('people.create') }}">Create New Person</a>

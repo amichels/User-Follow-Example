@@ -11,8 +11,7 @@
     {{ Form::text('Address', null, array('placeholder'=>'Address')) }}
     {{ Form::text('State', null, array('placeholder'=>'State')) }}
     {{ Form::text('City', null, array('placeholder'=>'City')) }}
-    {{ Form::text('Country', null, array('placeholder'=>'Country')) }}
     {{ Form::text('ZipCode', null, array('placeholder'=>'Zip')) }}
- 
+    {{ Form::text('Country', null, array('placeholder'=>'Country')) }}
     {{ Form::submit('Update', array('class'=>'button'))}}
 {{ Form::close() }}

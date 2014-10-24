@@ -39,8 +39,9 @@ class PeopleController extends BaseController {
 	public function show($id){
 		
 		$person = Person::findOrFail($id);
+		$activities = Activity::where('person_id','=', $id)->get();
 
-		$this->layout->content = View::make('people.dashboard')->with('person', $person);
+		$this->layout->content = View::make('people.dashboard')->with('person', $person)->with('activities', $activities);
 	}
 
 	public function edit($id){
@@ -54,12 +55,19 @@ class PeopleController extends BaseController {
 		$validator = Validator::make($data = Input::all(), Person::$rules);
 
 		if ($validator->fails()){
-			return Redirect::back()->withErrors($validator)->withInput();
+			return Redirect::back()->with('alert', 'The following errors occurred')->withErrors($validator)->withInput();
 		}
 
 		$person->update($data);
 
 		return Redirect::route('people.show', $person->id)->with('success', 'The Person has been updated');
+	}
+
+	public function destroy($id){
+		$person = Person::find($id);
+		$person->delete();
+
+		return Redirect::to('people/')->with('success', 'The person has been deleted');
 	}
 
 

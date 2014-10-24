@@ -16,5 +16,24 @@
 	</div>
 	<div class="small-8 large-8 columns">
 		<h2>Recent Activity</h2>
+		<table>
+		    <thead>
+		        <tr>
+		            <td>Name</td>
+		            <td>Description</td>
+		            <td>Actions</td>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        @foreach($activities as $key => $value)
+		            <tr>
+		                <td>{{ $value->Name }}</td>
+		                <td>{{ $value->Description }}</td>
+		            </tr>
+		        @endforeach
+		    </tbody>
+		</table>
+
+		<a class="button" href="{{ URL::route('people.activities.create',$person->id) }}">Create New Activity</a>
 	</div>
 </div>
