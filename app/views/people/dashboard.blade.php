@@ -35,5 +35,26 @@
 		</table>
 
 		<a class="button" href="{{ URL::route('people.activities.create',$person->id) }}">Create New Activity</a>
+
+		<h2>Followers</h2>
+		<table>
+		    <thead>
+		        <tr>
+		            <td>Name</td>
+		            <td>Action</td>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        @foreach($person->followers as $value)
+		            <tr>
+		                <td>{{ $value->FirstName }} {{ $value->LastName }}</td>
+		                <td>
+							<a class="button tiny" href="{{ URL::route('people.show', $value->id) }}">View</a>
+		                </td>
+		            </tr>
+		        @endforeach
+		    </tbody>
+		</table>
+
 	</div>
 </div>

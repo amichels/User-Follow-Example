@@ -2,7 +2,7 @@
 
 class Activity extends \Eloquent {
 
-	public function tracks(){
+	public function people(){
 	  return $this->belongsTo('Person');
 	}
 
