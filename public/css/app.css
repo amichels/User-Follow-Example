@@ -1,15 +1,21 @@
 table{
 	width:100%;
 }
-
-.container{
-	margin:0 auto;
-	padding:1em;
-	max-width:1080px;
+.list-bt{
+	float:left;
+	margin-right:.5em;
+}
+.dashboard-header{
+	font-size:1.7em;
+	margin:1em 0;
+}
+.prof-info-item{
+	margin-bottom:.5em;
+	font-size:.8em;
+}
+.prof-edit-bt{
 	width:100%;
 }
+.prof-activity-bt{
 
-.form-center{
-    width: 400px;
-    margin: 0 auto;
 }
