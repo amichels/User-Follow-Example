@@ -38,10 +38,14 @@ class PeopleController extends BaseController {
 
 	public function show($id){
 		
-		$person = Person::findOrFail($id);
-		$activities = Activity::where('person_id','=', $id)->get();
-
-		$this->layout->content = View::make('people.dashboard')->with('person', $person)->with('activities', $activities);
+		$person = Person::find($id);
+		if($person){
+			$activities = Activity::where('person_id','=', $id)->get();
+			$this->layout->content = View::make('people.dashboard')->with('person', $person)->with('activities', $activities);
+		}
+		else{
+			return Redirect::to('people/')->with('alert', 'Peson doesn\'t exist');
+		}
 	}
 
 	public function edit($id){
