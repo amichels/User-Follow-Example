@@ -21,6 +21,7 @@
 		        <tr>
 		            <td>Name</td>
 		            <td>Description</td>
+		            <td>Date</td>
 		        </tr>
 		    </thead>
 		    <tbody>
@@ -28,6 +29,7 @@
 		            <tr>
 		                <td>{{ $value->Name }}</td>
 		                <td>{{ $value->Description }}</td>
+		                <td>{{ $value->created_at }}</td>
 		            </tr>
 		        @endforeach
 		    </tbody>

@@ -39,8 +39,10 @@ class PeopleController extends BaseController {
 	public function show($id){
 		
 		$person = Person::find($id);
+		//if person exists show dashboard. If not, rediect to people/ with alert that that person doesn't exist.
 		if($person){
-			$activities = Activity::where('person_id','=', $id)->get();
+			//take only five most recent activites
+			$activities = Activity::where('person_id','=', $id)->take(5)->orderBy('created_at', 'desc')->get();
 			$this->layout->content = View::make('people.dashboard')->with('person', $person)->with('activities', $activities);
 		}
 		else{
